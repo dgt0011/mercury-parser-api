@@ -9,7 +9,7 @@ import {
 const parseHtml = async ({ body }, context, cb) => {
   const { url, html } = JSON.parse(body);
 
-  const result = await Parser.parse(url, { html });
+  const result = await Parser.parse(url, { contentType: 'text', html });
 
   return cb(
     null,
